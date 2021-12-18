@@ -34,6 +34,26 @@
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
 
+
+    <!-- For Date picker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  <!-- Date picker end -->
+
+  <!-- Time picker -->
+  <link rel="stylesheet" href="../assets/user-friendly-time-picker/dist/css/timepicker.min.css">
+  <script src="../assets/user-friendly-time-picker/dist/js/timepicker.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -67,14 +87,88 @@
 
 
 
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-center" style="height: 600px;">
-          <h1>Will be implemented later</h1>
-        </div>
-      </div>
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row justify-content-center">
+                <div class="section-title">
+                    <!-- <h2>Login</h2> -->
+                    <h3><span>Report Missing Item</span></h3>
+                    <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae
+                autem.</p> -->
+                </div>
+
+
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-6 align-items-center">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <!-- <div class="col form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div> -->
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" required>
+                                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label for="location" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="location" required>
+                                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="mb-3">
+                                    <label for="bs-timepicker" class="form-label">Time</label>
+                                    <input type="text" class="bs-timepicker form-control">
+                                    <script>
+                                        $('.bs-timepicker').timepicker();
+                                    </script>
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col">
+                                  <div class="mb-3">
+                                    <label for="datepicker" class="form-label">Date</label>
+                                    <input type="text" id="datepicker" class="form-control">
+                                    
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="mb-3">
+                                    <label for="bs-timepicker" class="form-label">Time</label>
+                                    <input type="text" class="bs-timepicker form-control">
+                                    <script>
+                                      $('.bs-timepicker').timepicker();
+                                    </script>
+                        
+                                  </div>
+                                </div>
+                              </div>
+              
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" rows="3" required></textarea>
+                                  </div>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex justify-content-center"><a href="" class="notice-button"
+                                    role="button">Submit</a></div>
+                              </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+    </section>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="fixed-bottom">
+    <footer id="footer" class="">
 
 
         <div class="container py-4">
@@ -103,6 +197,8 @@
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
+
+
 
 </body>
 
