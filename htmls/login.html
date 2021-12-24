@@ -34,6 +34,9 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
+  <!-- Script for password show button -->
+  <script src="../assets/js/customMade.js"></script>
+
 </head>
 
 <body>
@@ -109,8 +112,13 @@
                 <input type="text" class="form-control" name="email" id="email" placeholder="Email Address" required>
               </div>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" name="subject" id="subject" placeholder="Password" required>
+            <div class="form-group input-group flex-nowrap">
+              <input type="password" class="form-control" name="subject" id="passlog" placeholder="Password" required>
+              <span class="input-group-text" id="addon-wrapping"
+                    onclick="toggleShowPass(document.getElementById('passlog'),document.getElementById('hide5'),document.getElementById('hide6'))">
+                    <i id="hide5" class="bi bi-eye-fill" style="display: none;"></i>
+                    <i id="hide6" class="bi bi-eye-slash-fill"></i>
+              </span>
             </div>
             <!-- <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>

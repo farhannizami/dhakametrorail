@@ -38,6 +38,9 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
+  <!-- Script for password show button -->
+  <script src="../assets/js/customMade.js"></script>
+
 </head>
 
 <!-- Firebase config -->
@@ -123,14 +126,24 @@
                 </div>
               </div>
               <div class="row">
-                <div class="form-group">
+                <div class="form-group input-group flex-nowrap">
                   <input type="password" class="form-control" name="password" id="pass" placeholder="Password" required>
+                  <span class="input-group-text" id="addon-wrapping"
+                    onclick="toggleShowPass(document.getElementById('pass'),document.getElementById('hide1'),document.getElementById('hide2'))">
+                    <i id="hide1" class="bi bi-eye-fill" style="display: none;"></i>
+                    <i id="hide2" class="bi bi-eye-slash-fill"></i>
+                  </span>
                 </div>
               </div>
               <div class="row">
-                <div class="form-group">
+                <div class="form-group input-group flex-nowrap">
                   <input type="password" class="form-control" name="conpassword" id="conpass"
                     placeholder="Confirm Password" required>
+                  <span class="input-group-text" id="addon-wrapping"
+                    onclick="toggleShowPass(document.getElementById('conpass'),document.getElementById('hide3'),document.getElementById('hide4'))">
+                    <i id="hide3" class="bi bi-eye-fill" style="display: none;"></i>
+                    <i id="hide4" class="bi bi-eye-slash-fill"></i>
+                  </span>
                 </div>
               </div>
 
@@ -158,13 +171,20 @@
                       var phoneno = document.getElementById("phone").value;
                       var pass = document.getElementById("pass").value;
                       var conpass = document.getElementById("conpass").value;
-                      if (username == "" || email == "" || phoneno == "" || pass == "" || conpass == "") {
+                      var isemail = 0;
+                      for (var i = 0; i < email.length; i++) {
+                        if (email[i] == '@') {
+                          isemail = 1;
+                          break;
+                        }
+                      }
+                      if (isemail == 0 || username == "" || email == "" || phoneno == "" || pass == "" || conpass == "") {
                         alert("Please fill all the forms");
                       }
                       else {
 
                         if (pass == conpass) {
-                          firebase.database().ref('userAccount/' + username + phoneno).set({
+                          firebase.database().ref('userAccount/login/' + username + phoneno).set({
                             username: username,
                             email: email,
                             phoneno: phoneno,
