@@ -65,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(360deg);
   }
 }
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -1418,8 +1419,8 @@ section {
   font-size: 14px;
 }
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #106eea;
-  /*border-color: rgb(0,104,55);*/
+  /*border-color: #106eea;*/
+  border-color: rgb(0,104,55);
 }
 .contact .php-email-form input {
   padding: 10px 15px;
