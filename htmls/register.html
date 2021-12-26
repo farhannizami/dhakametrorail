@@ -183,8 +183,10 @@
                       }
                       else {
 
+                        email = email.replace(".",",");
+
                         if (pass == conpass) {
-                          firebase.database().ref('userAccount/login/' + username + phoneno).set({
+                          firebase.database().ref('userAccount/login/' + email).set({
                             username: username,
                             email: email,
                             phoneno: phoneno,
