@@ -1700,7 +1700,7 @@ section {
 
 .section-title-map .outter
 {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0,0.1);
   padding: 3%;
   margin: 2% 0 2% 0 ;
 }
@@ -1735,5 +1735,37 @@ section {
     width: 100%;
     margin:0;
     padding-bottom: 3%;
+  }
+}
+
+.contactinfo .outter
+{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+
+/* Button used in contactus */
+.btncustom
+{
+  background: rgb(0,104,55);
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.btncustom:hover
+{
+  background: #ff0000;
+  color: #fff;
+}
+
+@media only screen and (max-width: 991px)
+{
+  .feedbackhead
+  {
+    margin-top: 30px;
   }
 }

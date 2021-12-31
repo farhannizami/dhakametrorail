@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+
+  <!-- Firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -36,6 +40,23 @@
 
 </head>
 
+<!-- Firebase config -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDtjoHKlR2Z-vmTo02Sdnp3W4A3OZDY7sc",
+    authDomain: "dhaka-metro-rail-b65f1.firebaseapp.com",
+    databaseURL: "https://dhaka-metro-rail-b65f1-default-rtdb.firebaseio.com",
+    projectId: "dhaka-metro-rail-b65f1",
+    storageBucket: "dhaka-metro-rail-b65f1.appspot.com",
+    messagingSenderId: "907606191260",
+    appId: "1:907606191260:web:8d8e22a74c1370f1c19159"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
@@ -49,7 +70,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="../index.html">Home</a></li>                  
+          <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="maps.html">Maps</a></li>
           <li><a class="nav-link scrollto active" href="contact.html">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="register.html">Register</a></li>
@@ -62,14 +83,153 @@
   </header><!-- End Header -->
 
 
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-center" style="height: 600px;">
-      <h1>Will be implemented later</h1>
+  <section>
+    <div class="container section-title-map">
+      <div class="contactinfo">
+        <div class="row">
+          
+          <div class="col-lg-6">
+            <h1 class="metrogreen">Contact Us</h1>
+            <div class="card outter" style="border: none;">
+              <div class="card-body">
+                <h3 class="metrogreen"><i class="bi bi-envelope-fill" style="padding-right: 20px;"></i> Email Address
+                </h3>
+                <p class="card-text">
+                <h4 style="padding-left:60px;">
+                  contact@dmtcl.com
+                </h4>
+                </p>
+
+              </div>
+            </div>
+
+            <div class="card outter" style="border: none;">
+              <div class="card-body">
+                <h3 class="metrogreen"><i class="bi bi-telephone-fill" style="padding-right: 20px;"></i> Contact No</h3>
+                <p class="card-text">
+                <h4 style="padding-left: 60px;">
+                  88-02-55138099
+                </h4>
+                </p>
+
+              </div>
+            </div>
+
+            <div class="card outter" style="border: none;">
+              <div class="card-body">
+                <h3 class="metrogreen"><i class="bi bi-geo-alt-fill" style="padding-right: 20px;"></i> Location</h3>
+                <p class="card-text">
+                <h4 style="padding-left: 60px;">
+                  Probashi Kallyan Bhaban (Level-14)<br>
+                  71-72 Old Elephant Road <br>
+                  Eskaton Garden, Dhaka-1000<br>
+
+                  Fax: 88-02-9353507
+                </h4>
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-6">
+            <h1 class="metrogreen feedbackhead">Feedback & Suggestions</h1>
+            <div class="card outter" style="border: none;">
+              <div class="card-body">
+                
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="contactName" placeholder="abc" required>
+                  <label for="contactName"><i class="bi bi-person-circle metrogreen" style="padding-right: 10px;"></i>Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="contactEmail" placeholder="abc@email.com" required>
+                  <label for="contactEmail"><i class="bi bi-envelope-fill metrogreen" style="padding-right: 10px;"></i>Email Address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="comment" style="height: 98px"></textarea>
+                  <label for="comment"><i class="bi bi-chat-left-text-fill metrogreen" style="padding-right: 10px;"></i>Comments</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" onclick="submission()" class="btncustom">Submit</button>
+                </div>
+
+
+                <!-- firebase input script -->
+                <script>
+                  function submission() {
+                    var username = document.getElementById("contactName").value;
+                    var email = document.getElementById("contactEmail").value;
+                    var comment = document.getElementById("comment").value;
+                    var isemail = 0;
+                    for (var i = 0; i < email.length; i++) {
+                      if (email[i] == '@') {
+                        isemail = 1;
+                        break;
+                      }
+                    }
+                    if (isemail == 0 || username == "" || email == "" || comment=="") {
+                      alert("Please fill all the forms");
+                    }
+                    else {
+
+                      var email2 = email.replace(".",",");
+
+                      
+                        firebase.database().ref('userAccount/feedback/' + email2).set({
+                          username: username,
+                          email: email,
+                          comment: comment
+                        }, function (error) {
+                          if (error) {
+                            // The write failed...
+                          } else {
+                            alert("Response Submitted");
+                            // document.getElementById("error").innerHTML = "DONE";
+                          }
+                        });
+                    }
+                  }
+                </script>
+
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
+          <!-- <div class="d-flex justify-content-center">
+            <div class="col-lg-6">
+              <div class="card outter" style="border: none;">
+                <div class="card-body">
+                  <h3 class="metrogreen"><i class="bi bi-geo-alt-fill" style="padding-right: 20px;"></i> Location</h3>
+                  <p class="card-text">
+                  <h4 style="padding-left: 60px;">
+                    Probashi Kallyan Bhaban (Level-14)<br>
+                    71-72 Old Elephant Road <br>
+                    Eskaton Garden, Dhaka-1000<br>
+
+                    Fax: 88-02-9353507
+                  </h4>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- <div class="contactinfo" style="margin-top: 8%;">
+        <h1 class="metrogreen">Feedback & Suggestions</h1>
+        adasdad
+      </div> -->
+
+
     </div>
-  </div>
+  </section>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="fixed-bottom">
+  <footer id="footer">
 
     <div class="container py-4">
       <div class="copyright">

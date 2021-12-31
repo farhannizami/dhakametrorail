@@ -183,10 +183,10 @@
                       }
                       else {
 
-                        email = email.replace(".",",");
+                        var email2 = email.replace(".",",");
 
                         if (pass == conpass) {
-                          firebase.database().ref('userAccount/login/' + email).set({
+                          firebase.database().ref('userAccount/login/' + email2).set({
                             username: username,
                             email: email,
                             phoneno: phoneno,
@@ -195,7 +195,7 @@
                             if (error) {
                               // The write failed...
                             } else {
-                              alert("DONE");
+                              alert("Account Created");
                               // document.getElementById("error").innerHTML = "DONE";
 
                             }
