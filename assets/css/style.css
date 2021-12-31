@@ -20,6 +20,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", sans-serif;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: rgb(0,104,55);
+}
+
+::selection
+{
+  color: white;
+  background: rgb(0,104,55);
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -375,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #106eea;
+  color: rgb(0,104,55);
 }
 .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
   margin: 15px;
@@ -1679,6 +1690,9 @@ section {
   font-size: 32px;
   font-weight: 700;
 }
+.section-title-map h3 {
+  font-weight: 700;
+}
 .section-title-map p {
   margin: 15px auto 0 auto;
   font-weight: 600;
@@ -1690,7 +1704,36 @@ section {
   padding: 3%;
   margin: 2% 0 2% 0 ;
 }
-/* .section-title-map .outter img:hover
+.section-title-map .outter img:hover
 {
-  opacity: 0.8;
-} */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+} 
+
+.section-title-map .aboutimg
+{
+  width: 50%;
+  margin: 0 3% 3% 3%;
+  /*padding: 0 3% 3% 3%;*/
+}
+
+.aboutclass p
+{
+  font-weight: 400;
+}
+.aboutclass h5
+{
+  margin-top: 3%;
+}
+.aboutimg:hover 
+{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 991px) {
+  .section-title-map .aboutimg
+  {
+    width: 100%;
+    margin:0;
+    padding-bottom: 3%;
+  }
+}
