@@ -66,6 +66,9 @@
   <script src="../assets/user-friendly-time-picker/dist/js/timepicker.min.js"></script>
 
 
+  <script src="../assets/js/customMade.js"></script>
+
+
 
 </head>
 
@@ -83,7 +86,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="../index.html">Home</a></li>                    
+          <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
           <li><a class="nav-link scrollto " href="maps.html">Maps</a></li>
           <li><a class="nav-link scrollto" href="contact.html">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="register.html">Register</a></li>
@@ -96,33 +99,57 @@
   </header><!-- End Header -->
 
 
-
-
-
-
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
-    <div class="container" data-aos="fade-up">
 
-      <div class="row justify-content-center">
-        <div class="section-title">
-          <!-- <h2>Login</h2> -->
-          <h3><span>Find Your Route</span></h3>
-          <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae
-            autem.</p> -->
-        </div>
+    <div style="display: block;" id="selectdata">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="section-title">
+
+            <h3><span>Find Your Route</span></h3>
+
+          </div>
 
 
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-lg-6 align-items-center">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
+            <div class="col-lg-6 align-items-center">
 
-                <div class="col form-group">
+              <form action="" method="post" role="form" class="php-email-form">
+                <div class="row">
+
+                  <div class="col form-group">
+                    <div class="form-floating">
+                      <select class="form-select" id="start-select" aria-label="Floating label select example">
+                        <option selected>Choose start location</option>
+                        <option value="1">Uttara North</option>
+                        <option value="2">Uttara Center</option>
+                        <option value="3">Uttara South</option>
+                        <option value="4">Pallabi</option>
+                        <option value="5">Mirpur-11</option>
+                        <option value="6">Mirpur-10</option>
+                        <option value="7">Kazipara</option>
+                        <option value="8">Shewrapara</option>
+                        <option value="9">Agargaon</option>
+                        <option value="10">Bijoy Sarani</option>
+                        <option value="11">Farmgate</option>
+                        <option value="12">Karwan Bazar</option>
+                        <option value="13">Shahbag</option>
+                        <option value="14">Dhaka University</option>
+                        <option value="15">Bangladesh Secretariat</option>
+                        <option value="16">Motijheel</option>
+                      </select>
+                      <label for="floatingSelect">From</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
                   <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected>Choose start location</option>
+                    <select class="form-select" id="dest-select" aria-label="Floating label select example">
+                      <option selected>Choose destination</option>
                       <option value="1">Uttara North</option>
                       <option value="2">Uttara Center</option>
                       <option value="3">Uttara South</option>
@@ -140,168 +167,155 @@
                       <option value="15">Bangladesh Secretariat</option>
                       <option value="16">Motijheel</option>
                     </select>
-                    <label for="floatingSelect">From</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div class="form-floating">
-                  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                    <option selected>Choose destination</option>
-                    <option value="1">Uttara North</option>
-                    <option value="2">Uttara Center</option>
-                    <option value="3">Uttara South</option>
-                    <option value="4">Pallabi</option>
-                    <option value="5">Mirpur-11</option>
-                    <option value="6">Mirpur-10</option>
-                    <option value="7">Kazipara</option>
-                    <option value="8">Shewrapara</option>
-                    <option value="9">Agargaon</option>
-                    <option value="10">Bijoy Sarani</option>
-                    <option value="11">Farmgate</option>
-                    <option value="12">Karwan Bazar</option>
-                    <option value="13">Shahbag</option>
-                    <option value="14">Dhaka University</option>
-                    <option value="15">Bangladesh Secretariat</option>
-                    <option value="16">Motijheel</option>
-                  </select>
-                  <label for="floatingSelect">To</label>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div class="row">
-                  <div class="col">
-                    <div class="form-floating mb-3">
-                      <input type="text" id="datepicker" class="form-control">
-                      <label for="datepicker">Date</label>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-floating mb-3">
-                      <input type="text" class="bs-timepicker form-control">
-                      <script>
-                        $('.bs-timepicker').timepicker();
-                      </script>
-                      <label for="bs-timepicker">Time</label>
-                    </div>
+                    <label for="floatingSelect">To</label>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected>Choose number</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </select>
-                    <label for="floatingSelect">Number of person</label>
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-floating mb-3">
+                        <input type="text" id="datepicker" class="form-control">
+                        <label for="datepicker">Date</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="bs-timepicker form-control" id="timepicker">
+                        <script>
+                          $('.bs-timepicker').timepicker();
+                        </script>
+                        <label for="bs-timepicker">Time</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-floating">
+                      <select class="form-select" id="person-select" aria-label="Floating label select example">
+                        <option selected>Choose number</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                      <label for="floatingSelect">Number of person</label>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                 <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div> -->
+                <!-- <div class="text-center"> -->
+                <div class="row">
+                  <div class="d-flex justify-content-center">
+                    <button class="custom-button" type="submit" onclick="searchRoute()">Find</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="searchtrain" style="display: none;">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="section-title">
+
+            <h3><span>Available Train</span></h3>
+
+          </div>
+
+
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="col-lg-6 align-items-center">
+
+              <form action="" method="post" role="form" class="php-email-form">
+
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Train Name</label>
+                  <input type="text" class="form-control" id="train-name" aria-describedby="emailHelp" disabled>
+                </div>
+                <div class="row">
+
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Start Location</label>
+                      <input type="text" class="form-control" id="stl" aria-describedby="emailHelp" disabled>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Destination</label>
+                      <input type="text" class="form-control" id="dtl" aria-describedby="emailHelp" disabled>
+                    </div>
                   </div>
                 </div>
 
-              </div>
-              <!-- <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div> -->
-              <!-- <div class="text-center"> -->
-              <div class="row">
-                <div class="d-flex justify-content-center"><a href="searchmetro.html" class="notice-button"
-                    role="button">Find</a></div>
-                <!-- <div class="col-lg-9 d-flex align-items-center"><a href="">Forgot your password</a> -->
-              </div>
-          </div>
-          <!-- </div> -->
-          </form>
-        </div>
+                <div class="row">
 
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Per Person Fare</label>
+                      <input type="text" class="form-control" id="ppfare" aria-describedby="emailHelp" disabled>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Total Fare</label>
+                      <input type="text" class="form-control" id="tfare" aria-describedby="emailHelp" disabled>
+                    </div>
+                  </div>
+
+                </div>
+                
+                <div class="row">
+                  <div class="d-flex justify-content-center">
+                    <button class="custom-button" type="submit" onclick="confirmMsg()">Confirm</button>
+                  </div>
+                </div>
+
+              </form>
+
+
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
-  </section><!-- End Contact Section -->
+
+
+
+  </section>
+  <!-- End Contact Section -->
+
+
+
+
+
 
   </main><!-- End #main -->
 
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <!-- <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>BizLand<span>.</span></h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div> -->
-
+  <footer id="footer" class="fixed-bottom">
     <div class="container py-4">
       <div class="copyright">
         &copy; Copyright <strong><span></span></strong>. All Rights Reserved

@@ -1824,3 +1824,31 @@ section {
     font-size: 15px;
   }
 }
+
+.traindetails
+{
+  padding-left: 20px;
+}
+
+.search-perhead
+{
+  margin: 20px 0 0 0;
+}
+.custom-button
+{
+  background: rgb(0,104,55);
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.custom-button:hover
+{
+  background: #ff0000;
+}
+
+#searchtrain input[type="text"][disabled]
+{
+  background-color: white;
+}
