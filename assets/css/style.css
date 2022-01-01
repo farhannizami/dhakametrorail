@@ -1769,3 +1769,58 @@ section {
     margin-top: 30px;
   }
 }
+
+.section-title-map .notice-each
+{
+  padding: 3%;
+  margin: 2% 0 2% 0 ;
+}
+
+.dateshow
+{
+  width: 15%;
+  /*background: green;*/
+  font-size: 30px;
+  font-weight: 900;
+}
+.noticeshow
+{
+  width: 85%;
+  /*background: red;*/
+  font-size: 25px;
+}
+
+.seemore
+{
+  font-size: 20px;
+  color: rgb(0,104,55);
+}
+
+@media only screen and (max-width: 991px)
+{
+  .dateshow
+  {
+    width: 20%;
+    /*background: yellow;*/
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .noticeshow
+  {
+    width: 80%;
+    /*background: blue;*/
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px)
+{
+  
+  .noticeshow
+  {
+    font-size: 18px;
+  }
+  .seemore
+  {
+    font-size: 15px;
+  }
+}
