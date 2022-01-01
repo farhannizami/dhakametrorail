@@ -34,7 +34,7 @@ function searchRoute() {
   var personind = document.getElementById("person-select");
   var person = personind.options[personind.selectedIndex].text;
 
-  var ppfare = parseInt(person) * 4;
+  //var ppfare = parseInt(person) * 4;
 
   //if(time==="") console.log("nnnn")
   //console.log(date+" "+time);
@@ -47,12 +47,22 @@ function searchRoute() {
     cn.style.display = "none";
     sch.style.display = "block";
 
+    const dist = [-1,0,2.3, 3.7, 5.7, 6.7, 8.2, 9.5, 10.5, 12, 14, 17.8, 18.8, 20.2, 21.2, 22.6, 24.1];
+    //console.log(dtselectind.selectedIndex);
+    //console.log(dtselectind.selectedIndex.value);
+    //console.log(dist[dtselectind.selectedIndex]);
+
+    var distance  = Math.abs(dist[stselectind.selectedIndex] - dist[dtselectind.selectedIndex]);
+    var ppfare = Math.max(5,Math.round(distance*2.4));
+
+    var totfare = ppfare* parseInt(person);
 
     //alert(stl);
     document.getElementById("train-name").value = "MR-11";
     document.getElementById("stl").value = stl;
     document.getElementById("dtl").value = dtl;
     document.getElementById("ppfare").value = ppfare;
+    document.getElementById("tfare").value = totfare;
   }
 
 }
