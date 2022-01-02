@@ -62,8 +62,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <!-- <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
+
       <a href="../index.html" class="logo"><img src="../assets/img/metroraillogo.png" alt=""> <span class="logo"><span
             class="fname">Dhaka</span><span class="lname"> Metro Rail</span></span></a>
       <!-- <a href="index.html" class="logo-txt">Dhaka Metro Rail</a> -->
@@ -72,6 +71,7 @@
         <ul>
           <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="maps.html">Maps</a></li>
+          <li><a class="nav-link scrollto" href="farecalc.html">Fare Calculation</a></li>
           <li><a class="nav-link scrollto active" href="contact.html">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="register.html">Register</a></li>
           <li><a class="nav-link scrollto " href="login.html">Log In</a></li>
@@ -87,7 +87,7 @@
     <div class="container section-title-map">
       <div class="contactinfo">
         <div class="row">
-          
+
           <div class="col-lg-6">
             <h1 class="metrogreen">Contact Us</h1>
             <div class="card outter" style="border: none;">
@@ -136,18 +136,22 @@
             <h1 class="metrogreen feedbackhead">Feedback & Suggestions</h1>
             <div class="card outter" style="border: none;">
               <div class="card-body">
-                
+
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="contactName" placeholder="abc" required>
-                  <label for="contactName"><i class="bi bi-person-circle metrogreen" style="padding-right: 10px;"></i>Name</label>
+                  <label for="contactName"><i class="bi bi-person-circle metrogreen"
+                      style="padding-right: 10px;"></i>Name</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="email" class="form-control" id="contactEmail" placeholder="abc@email.com" required>
-                  <label for="contactEmail"><i class="bi bi-envelope-fill metrogreen" style="padding-right: 10px;"></i>Email Address</label>
+                  <label for="contactEmail"><i class="bi bi-envelope-fill metrogreen"
+                      style="padding-right: 10px;"></i>Email Address</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="comment" style="height: 98px"></textarea>
-                  <label for="comment"><i class="bi bi-chat-left-text-fill metrogreen" style="padding-right: 10px;"></i>Comments</label>
+                  <textarea class="form-control" placeholder="Leave a comment here" id="comment"
+                    style="height: 98px"></textarea>
+                  <label for="comment"><i class="bi bi-chat-left-text-fill metrogreen"
+                      style="padding-right: 10px;"></i>Comments</label>
                 </div>
                 <div class="d-flex justify-content-center">
                   <button type="submit" onclick="submission()" class="btncustom">Submit</button>
@@ -167,26 +171,26 @@
                         break;
                       }
                     }
-                    if (isemail == 0 || username == "" || email == "" || comment=="") {
+                    if (isemail == 0 || username == "" || email == "" || comment == "") {
                       alert("Please fill all the forms");
                     }
                     else {
 
-                      var email2 = email.replace(".",",");
+                      var email2 = email.replace(".", ",");
 
-                      
-                        firebase.database().ref('userAccount/feedback/' + email2).set({
-                          username: username,
-                          email: email,
-                          comment: comment
-                        }, function (error) {
-                          if (error) {
-                            // The write failed...
-                          } else {
-                            alert("Response Submitted");
-                            // document.getElementById("error").innerHTML = "DONE";
-                          }
-                        });
+
+                      firebase.database().ref('userAccount/feedback/' + email2).set({
+                        username: username,
+                        email: email,
+                        comment: comment
+                      }, function (error) {
+                        if (error) {
+                          // The write failed...
+                        } else {
+                          alert("Response Submitted");
+                          location.replace("contact.html");
+                        }
+                      });
                     }
                   }
                 </script>
@@ -194,35 +198,9 @@
               </div>
             </div>
           </div>
-          </div>
-
-
-
-          <!-- <div class="d-flex justify-content-center">
-            <div class="col-lg-6">
-              <div class="card outter" style="border: none;">
-                <div class="card-body">
-                  <h3 class="metrogreen"><i class="bi bi-geo-alt-fill" style="padding-right: 20px;"></i> Location</h3>
-                  <p class="card-text">
-                  <h4 style="padding-left: 60px;">
-                    Probashi Kallyan Bhaban (Level-14)<br>
-                    71-72 Old Elephant Road <br>
-                    Eskaton Garden, Dhaka-1000<br>
-
-                    Fax: 88-02-9353507
-                  </h4>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
-
-      <!-- <div class="contactinfo" style="margin-top: 8%;">
-        <h1 class="metrogreen">Feedback & Suggestions</h1>
-        adasdad
-      </div> -->
+    </div>
 
 
     </div>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Dhaka Metro Rail</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <!-- Favicons -->
+    <link href="../assets/img/metrologo.png" rel="icon">
+    <link href="../assets/img/metroraillogo.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- CSS only -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+
+    <!-- MDB -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"> -->
+
+
+
+    <!-- For Date picker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <!-- Date picker end -->
+
+    <!-- Time picker -->
+    <!-- <link rel="stylesheet" href="../assets/user-friendly-time-picker/dist/css/timepicker.min.css">
+  <script src="../assets/user-friendly-time-picker/dist/js/timepicker.min.js"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="../assets/user-friendly-time-picker/dist/css/timepicker.min.css">
+    <!-- <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
+    <script src="../assets/user-friendly-time-picker/dist/js/timepicker.min.js"></script>
+
+
+    <script src="../assets/js/customMade.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            
+            <a href="../index.html" class="logo"><img src="../assets/img/metroraillogo.png" alt=""> <span
+                    class="logo"><span class="fname">Dhaka</span><span class="lname"> Metro Rail</span></span></a>
+            <!-- <a href="index.html" class="logo-txt">Dhaka Metro Rail</a> -->
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+                    <li><a class="nav-link scrollto " href="maps.html">Maps</a></li>
+                    <li><a class="nav-link scrollto active" href="farecalc.html">Fare Calculation</a></li>
+                    <li><a class="nav-link scrollto" href="contact.html">Contact Us</a></li>
+                    <li><a class="nav-link scrollto" href="register.html">Register</a></li>
+                    <li><a class="nav-link scrollto" href="login.html">Log In</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+        <div style="display: block;" id="selectdata">
+            <div class="container" data-aos="fade-up">
+                <div class="row justify-content-center">
+
+                    <div class="section-title">
+
+                        <h3><span>Calculate Fare</span></h3>
+
+                    </div>
+
+
+                    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-lg-6 align-items-center">
+
+                            <form action="" method="post" role="form" class="php-email-form">
+                                <div class="row">
+
+                                    <div class="col form-group">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="start-select"
+                                                aria-label="Floating label select example">
+                                                <option selected>Choose start location</option>
+                                                <option value="1">Uttara North</option>
+                                                <option value="2">Uttara Center</option>
+                                                <option value="3">Uttara South</option>
+                                                <option value="4">Pallabi</option>
+                                                <option value="5">Mirpur-11</option>
+                                                <option value="6">Mirpur-10</option>
+                                                <option value="7">Kazipara</option>
+                                                <option value="8">Shewrapara</option>
+                                                <option value="9">Agargaon</option>
+                                                <option value="10">Bijoy Sarani</option>
+                                                <option value="11">Farmgate</option>
+                                                <option value="12">Karwan Bazar</option>
+                                                <option value="13">Shahbag</option>
+                                                <option value="14">Dhaka University</option>
+                                                <option value="15">Bangladesh Secretariat</option>
+                                                <option value="16">Motijheel</option>
+                                            </select>
+                                            <label for="floatingSelect">From</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="dest-select"
+                                                aria-label="Floating label select example">
+                                                <option selected>Choose destination</option>
+                                                <option value="1">Uttara North</option>
+                                                <option value="2">Uttara Center</option>
+                                                <option value="3">Uttara South</option>
+                                                <option value="4">Pallabi</option>
+                                                <option value="5">Mirpur-11</option>
+                                                <option value="6">Mirpur-10</option>
+                                                <option value="7">Kazipara</option>
+                                                <option value="8">Shewrapara</option>
+                                                <option value="9">Agargaon</option>
+                                                <option value="10">Bijoy Sarani</option>
+                                                <option value="11">Farmgate</option>
+                                                <option value="12">Karwan Bazar</option>
+                                                <option value="13">Shahbag</option>
+                                                <option value="14">Dhaka University</option>
+                                                <option value="15">Bangladesh Secretariat</option>
+                                                <option value="16">Motijheel</option>
+                                            </select>
+                                            <label for="floatingSelect">To</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="person-select"
+                                                aria-label="Floating label select example">
+                                                <option selected>Choose number</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                            </select>
+                                            <label for="floatingSelect">Number of person</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="showprice" style="display: none;">
+
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Per Person Fare</label>
+                                            <input type="text" class="form-control" id="ppfare"
+                                                aria-describedby="emailHelp" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Total Fare</label>
+                                            <input type="text" class="form-control" id="tfare"
+                                                aria-describedby="emailHelp" disabled>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="d-flex justify-content-center">
+                                        <button class="custom-button" type="submit" onclick="farecalc()">Find</button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <div id="searchtrain" style="display: none;">
+
+            <div class="container" data-aos="fade-up">
+                <div class="row justify-content-center">
+
+                    <div class="section-title">
+
+                        <h3><span>Available Train</span></h3>
+
+                    </div>
+
+
+                    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-lg-6 align-items-center">
+
+                            <form action="" method="post" role="form" class="php-email-form">
+
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Train Name</label>
+                                    <input type="text" class="form-control" id="train-name" aria-describedby="emailHelp"
+                                        disabled>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Start Location</label>
+                                            <input type="text" class="form-control" id="stl"
+                                                aria-describedby="emailHelp" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Destination</label>
+                                            <input type="text" class="form-control" id="dtl"
+                                                aria-describedby="emailHelp" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Per Person Fare</label>
+                                            <input type="text" class="form-control" id="ppfare"
+                                                aria-describedby="emailHelp" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Total Fare</label>
+                                            <input type="text" class="form-control" id="tfare"
+                                                aria-describedby="emailHelp" disabled>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="d-flex justify-content-center">
+                                        <button class="custom-button" type="submit"
+                                            onclick="confirmMsg()">Confirm</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <!-- End Contact Section -->
+
+
+
+
+
+
+    </main><!-- End #main -->
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="fixed-bottom">
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span></span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by Farhan Nasif Nizami
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+
+
+</body>
+
+</html>
