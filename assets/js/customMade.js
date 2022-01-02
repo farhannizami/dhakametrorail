@@ -56,7 +56,7 @@ function searchRoute() {
     let dptime = "";
 
 
-    if (minInt > 50) {
+    if (minInt > 55) {
       hrint = (hrint + 1) % 24;
       hrstr = hrint.toString();
       if (hrint < 10) hrstr = '0' + hrstr;
@@ -68,7 +68,10 @@ function searchRoute() {
       dptime += hr+":";
       for (let i = 0; i < minute.length; i++) {
         if (minute[i] >= minInt) {
-          dptime += minute[i].toString();
+          let minstr = minute[i].toString();
+          if(minute[i]<10) minstr = '0'+minstr;
+          dptime += minstr;
+          console.log(dptime + " "+ minInt + " " + minute[i]);
           break;
         }
       }
@@ -81,7 +84,10 @@ function searchRoute() {
 
     var totfare = ppfare * parseInt(person);
 
-    document.getElementById("train-name").value = "MR-11";
+    //random number between 1 to 14
+    let rnd = Math.floor(Math.random()*14+1);
+
+    document.getElementById("train-name").value = "MR-"+rnd.toString();
     document.getElementById("stl").value = stl;
     document.getElementById("dtl").value = dtl;
     document.getElementById("dp-date").value = date;
@@ -94,7 +100,7 @@ function searchRoute() {
 
 function confirmMsg() {
   alert("Ticket Booked Successfully");
-  location.replace("../../index.html");
+  location.replace("../index.html");
 }
 
 
