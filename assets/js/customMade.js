@@ -112,12 +112,19 @@ function farecalc() {
   var personind = document.getElementById("person-select");
   var person = personind.options[personind.selectedIndex].text;
 
+  var btnag = document.getElementById("btnag");
+  var btnfnd = document.getElementById("btnfnd");
+
   if (stl === "Choose start location" || dtl === "Choose destination" || person === "Choose number") {
     alert("Please fill all the forms");
   }
   else {
 
     sch.style.display = "block";
+    btnfnd.style.display = "none";
+    btnag.style.display = "block";
+
+
     document.getElementById("footer").classList.remove("fixed-bottom");
     const dist = [-1, 0, 2.3, 3.7, 5.7, 6.7, 8.2, 9.5, 10.5, 12, 14, 17.8, 18.8, 20.2, 21.2, 22.6, 24.1];
   
