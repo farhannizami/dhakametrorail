@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+
+    <!-- Firebase link -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -36,25 +40,42 @@
 
 
     <!-- For Date picker -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#datepicker").datepicker();
-    });
-  </script>
-  <!-- Date picker end -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <!-- Date picker end -->
 
-  <!-- Time picker -->
-  <link rel="stylesheet" href="../assets/user-friendly-time-picker/dist/css/timepicker.min.css">
-  <script src="../assets/user-friendly-time-picker/dist/js/timepicker.min.js"></script>
+    <!-- Time picker -->
+    <link rel="stylesheet" href="../assets/user-friendly-time-picker/dist/css/timepicker.min.css">
+    <script src="../assets/user-friendly-time-picker/dist/js/timepicker.min.js"></script>
 
 
 
 </head>
+
+<!-- Firebase config -->
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyDtjoHKlR2Z-vmTo02Sdnp3W4A3OZDY7sc",
+        authDomain: "dhaka-metro-rail-b65f1.firebaseapp.com",
+        databaseURL: "https://dhaka-metro-rail-b65f1-default-rtdb.firebaseio.com",
+        projectId: "dhaka-metro-rail-b65f1",
+        storageBucket: "dhaka-metro-rail-b65f1.appspot.com",
+        messagingSenderId: "907606191260",
+        appId: "1:907606191260:web:8d8e22a74c1370f1c19159"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+</script>
 
 <body>
 
@@ -70,7 +91,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="../index.html">Home</a></li>                                     
+                    <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
                     <li><a class="nav-link scrollto " href="maps.html">Maps</a></li>
                     <li><a class="nav-link scrollto" href="farecalc.html">Fare Calculation</a></li>
                     <li><a class="nav-link scrollto" href="contact.html">Contact Us</a></li>
@@ -95,7 +116,7 @@
                 <div class="section-title">
                     <!-- <h2>Login</h2> -->
                     <h3><span>Report Missing Item</span></h3>
-                    
+
                 </div>
 
 
@@ -108,8 +129,8 @@
                       <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                     </div> -->
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" required>
+                                    <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
                                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                                 </div>
                             </div>
@@ -120,45 +141,83 @@
                                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="mb-3">
-                                    <label for="bs-timepicker" class="form-label">Time</label>
-                                    <input type="text" class="bs-timepicker form-control">
-                                    <script>
-                                        $('.bs-timepicker').timepicker();
-                                    </script>
-                                </div>
-                            </div> -->
+
                             <div class="row">
                                 <div class="col">
-                                  <div class="mb-3">
-                                    <label for="datepicker" class="form-label">Date</label>
-                                    <input type="text" id="datepicker" class="form-control">
-                                    
-                                  </div>
+                                    <div class="mb-3">
+                                        <label for="datepicker" class="form-label">Date</label>
+                                        <input type="text" id="datepicker" class="form-control">
+
+                                    </div>
                                 </div>
                                 <div class="col">
-                                  <div class="mb-3">
-                                    <label for="bs-timepicker" class="form-label">Approx. Time</label>
-                                    <input type="text" class="bs-timepicker form-control">
-                                    <script>
-                                      $('.bs-timepicker').timepicker();
-                                    </script>
-                        
-                                  </div>
+                                    <div class="mb-3">
+                                        <label for="bs-timepicker" class="form-label">Approx. Time</label>
+                                        <input type="text" class="bs-timepicker form-control" id="timepick">
+                                        <script>
+                                            $('.bs-timepicker').timepicker();
+                                        </script>
+
+                                    </div>
                                 </div>
-                              </div>
-              
+                            </div>
+
                             <div class="row">
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Description</label>
                                     <textarea class="form-control" id="description" rows="3" required></textarea>
-                                  </div>
+                                </div>
                             </div>
                             <div class="row">
-                                <div class="d-flex justify-content-center"><a href="" class="notice-button"
-                                    role="button">Submit</a></div>
-                              </div>
+                                <!-- <div class="d-flex justify-content-center"><a href="" class="notice-button"
+                                        role="button">Submit</a></div> -->
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" onclick="report()" class="btncustom">Submit</button>
+                                </div>
+
+                                <!-- firebase input script -->
+                                <script>
+                                    function report() {
+                                        var email = document.getElementById("email").value;
+                                        var location = document.getElementById("location").value;
+                                        var time = document.getElementById("timepick").value;
+                                        var date = document.getElementById("datepicker").value;
+                                        var comment = document.getElementById("description").value;
+                                        var isemail = 0;
+                                        for (var i = 0; i < email.length; i++) {
+                                            if (email[i] == '@') {
+                                                isemail = 1;
+                                                break;
+                                            }
+                                        }
+                                        if (isemail == 0 || email == "" || location == "" || time == "" || date == "" || comment == "") {
+                                            alert("Please fill all the forms correctly");
+                                        }
+                                        else {
+
+                                            var email2 = email.replace(".", ",");
+
+
+                                            firebase.database().ref('userAccount/missing/' + email2).set({
+                                                email: email,
+                                                location: location,
+                                                time: time,
+                                                date: date,
+                                                description: comment
+                                            }, function (error) {
+                                                if (error) {
+                                                    // The write failed...
+                                                } else {
+                                                    alert("Response Submitted");
+                                                    location.replace("contact.html");
+                                                }
+                                            });
+                                        }
+                                    }
+                                </script>
+
+                            </div>
                         </form>
                     </div>
 
