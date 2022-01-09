@@ -185,6 +185,8 @@
                                         var date = document.getElementById("datepicker").value;
                                         var comment = document.getElementById("description").value;
                                         var isemail = 0;
+                                        var dt = new Date();
+                                        var dateTime = dt.toString();
                                         for (var i = 0; i < email.length; i++) {
                                             if (email[i] == '@') {
                                                 isemail = 1;
@@ -204,7 +206,8 @@
                                                 location: location,
                                                 time: time,
                                                 date: date,
-                                                description: comment
+                                                description: comment,
+                                                dateTime: dateTime
                                             }, function (error) {
                                                 if (error) {
                                                     // The write failed...

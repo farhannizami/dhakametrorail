@@ -142,7 +142,9 @@ function farecalc() {
 
 function showComment() {
 
-  var count = 0;
+
+  // feedback part
+  let count = 0;
   firebase.database().ref('userAccount/feedback/').once('value').then(function (snapshot) {
     snapshot.forEach(function (child) {
       let dc = document.getElementById("demo-comment").cloneNode(true);
@@ -167,6 +169,36 @@ function showComment() {
   });
   //alert(count + "dina");
   let demo_disappear = document.getElementById("feedback-section");
+  demo_disappear.children[1].style.display = "none";
+
+
+  // missing item part
+  count = 0;
+  firebase.database().ref('userAccount/missing/').once('value').then(function (snapshot) {
+    snapshot.forEach(function (child) {
+      let dc = document.getElementById("demo-missing").cloneNode(true);
+      dc.children[0].children[0].innerHTML = child.val().email;
+      dc.children[0].children[1].innerHTML = child.val().dateTime;
+      dc.children[1].children[0].innerHTML = child.val().location;
+      dc.children[2].children[0].innerHTML = child.val().time;
+      dc.children[3].innerHTML = child.val().description;
+      document.getElementById('missing-section').appendChild(dc);
+      dc.style.display = "block";
+      count++;
+      //alert(count);
+    });
+    if(count==0)
+    {
+      document.getElementById("no-report").style.display = "block";
+    }
+  }, function (error) {
+    if (error) {
+    } else {
+      
+    }
+  });
+  //alert(count + "dina");
+  demo_disappear = document.getElementById("missing-section");
   demo_disappear.children[1].style.display = "none";
 
 }
