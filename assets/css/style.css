@@ -1651,6 +1651,10 @@ section {
 {
   color: rgb(0,104,55);
 }
+.metrored
+{
+  color: #ff0000;
+}
 
 /* Custom for notice header*/
 .custom-notice h1
@@ -1851,4 +1855,15 @@ section {
 #searchtrain input[type="text"][disabled]
 {
   background-color: white;
+}
+
+/* Admin section */
+.comment-email
+{
+  color: rgb(138, 138, 156);
+}
+#demo-comment
+{
+  margin-top: 30px;
+  /* margin-bottom: 50px; */
 }

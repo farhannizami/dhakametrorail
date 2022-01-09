@@ -1,5 +1,5 @@
 function toggleShowPass(x, a, b) {
- 
+
   if (x.type === 'password') {
     x.type = 'text';
     a.style.display = "block";
@@ -16,21 +16,21 @@ function toggleShowPass(x, a, b) {
 function searchRoute() {
 
 
-  var cn = document.getElementById("selectdata");
-  var sch = document.getElementById("searchtrain");
+  let cn = document.getElementById("selectdata");
+  let sch = document.getElementById("searchtrain");
 
 
-  var stselectind = document.getElementById("start-select");
-  var stl = stselectind.options[stselectind.selectedIndex].text;
+  let stselectind = document.getElementById("start-select");
+  let stl = stselectind.options[stselectind.selectedIndex].text;
 
-  var dtselectind = document.getElementById("dest-select");
-  var dtl = dtselectind.options[dtselectind.selectedIndex].text;
+  let dtselectind = document.getElementById("dest-select");
+  let dtl = dtselectind.options[dtselectind.selectedIndex].text;
 
-  var time = document.getElementById("timepicker").value;
-  var date = document.getElementById("datepicker").value;
+  let time = document.getElementById("timepicker").value;
+  let date = document.getElementById("datepicker").value;
 
-  var personind = document.getElementById("person-select");
-  var person = personind.options[personind.selectedIndex].text;
+  let personind = document.getElementById("person-select");
+  let person = personind.options[personind.selectedIndex].text;
 
 
   if (stl === "Choose start location" || dtl === "Choose destination" || person === "Choose number" || time === "" || date === "") {
@@ -65,13 +65,13 @@ function searchRoute() {
     }
     else {
 
-      dptime += hr+":";
+      dptime += hr + ":";
       for (let i = 0; i < minute.length; i++) {
         if (minute[i] >= minInt) {
           let minstr = minute[i].toString();
-          if(minute[i]<10) minstr = '0'+minstr;
+          if (minute[i] < 10) minstr = '0' + minstr;
           dptime += minstr;
-          console.log(dptime + " "+ minInt + " " + minute[i]);
+          console.log(dptime + " " + minInt + " " + minute[i]);
           break;
         }
       }
@@ -79,15 +79,15 @@ function searchRoute() {
 
     const dist = [-1, 0, 2.3, 3.7, 5.7, 6.7, 8.2, 9.5, 10.5, 12, 14, 17.8, 18.8, 20.2, 21.2, 22.6, 24.1];
 
-    var distance = Math.abs(dist[stselectind.selectedIndex] - dist[dtselectind.selectedIndex]);
-    var ppfare = Math.max(5, Math.round(distance * 2.4));
+    let distance = Math.abs(dist[stselectind.selectedIndex] - dist[dtselectind.selectedIndex]);
+    let ppfare = Math.max(5, Math.round(distance * 2.4));
 
-    var totfare = ppfare * parseInt(person);
+    let totfare = ppfare * parseInt(person);
 
     //random number between 1 to 14
-    let rnd = Math.floor(Math.random()*14+1);
+    let rnd = Math.floor(Math.random() * 14 + 1);
 
-    document.getElementById("train-name").value = "MR-"+rnd.toString();
+    document.getElementById("train-name").value = "MR-" + rnd.toString();
     document.getElementById("stl").value = stl;
     document.getElementById("dtl").value = dtl;
     document.getElementById("dp-date").value = date;
@@ -105,15 +105,15 @@ function confirmMsg() {
 
 
 function farecalc() {
-  var cn = document.getElementById("selectdata");
-  var sch = document.getElementById("showprice");
-  var stselectind = document.getElementById("start-select");
-  var dtselectind = document.getElementById("dest-select");
-  var personind = document.getElementById("person-select");
-  var person = personind.options[personind.selectedIndex].text;
+  let cn = document.getElementById("selectdata");
+  let sch = document.getElementById("showprice");
+  let stselectind = document.getElementById("start-select");
+  let dtselectind = document.getElementById("dest-select");
+  let personind = document.getElementById("person-select");
+  let person = personind.options[personind.selectedIndex].text;
 
-  var btnag = document.getElementById("btnag");
-  var btnfnd = document.getElementById("btnfnd");
+  let btnag = document.getElementById("btnag");
+  let btnfnd = document.getElementById("btnfnd");
 
   if (stl === "Choose start location" || dtl === "Choose destination" || person === "Choose number") {
     alert("Please fill all the forms");
@@ -127,14 +127,46 @@ function farecalc() {
 
     document.getElementById("footer").classList.remove("fixed-bottom");
     const dist = [-1, 0, 2.3, 3.7, 5.7, 6.7, 8.2, 9.5, 10.5, 12, 14, 17.8, 18.8, 20.2, 21.2, 22.6, 24.1];
-  
-    var distance = Math.abs(dist[stselectind.selectedIndex] - dist[dtselectind.selectedIndex]);
-    var ppfare = Math.max(5, Math.round(distance * 2.4));
 
-    var totfare = ppfare * parseInt(person);
+    let distance = Math.abs(dist[stselectind.selectedIndex] - dist[dtselectind.selectedIndex]);
+    let ppfare = Math.max(5, Math.round(distance * 2.4));
+
+    let totfare = ppfare * parseInt(person);
     document.getElementById("ppfare").value = ppfare;
     document.getElementById("tfare").value = totfare;
 
   }
+
+}
+
+
+function showComment() {
+
+  var count = 0;
+  firebase.database().ref('userAccount/feedback/').once('value').then(function (snapshot) {
+    snapshot.forEach(function (child) {
+      let dc = document.getElementById("demo-comment").cloneNode(true);
+      dc.children[0].children[0].innerHTML = child.val().username;
+      dc.children[0].children[1].innerHTML = child.val().dateTime;
+      dc.children[1].innerHTML = child.val().email;
+      dc.children[2].innerHTML = child.val().comment;
+      document.getElementById('feedback-section').appendChild(dc);
+      dc.style.display = "block";
+      count++;
+      //alert(count);
+    });
+    if(count==0)
+    {
+      document.getElementById("no-comment").style.display = "block";
+    }
+  }, function (error) {
+    if (error) {
+    } else {
+      
+    }
+  });
+  //alert(count + "dina");
+  let demo_disappear = document.getElementById("feedback-section");
+  demo_disappear.children[1].style.display = "none";
 
 }

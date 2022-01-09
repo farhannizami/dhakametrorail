@@ -165,6 +165,9 @@
                     var email = document.getElementById("contactEmail").value;
                     var comment = document.getElementById("comment").value;
                     var isemail = 0;
+                    const d = new Date;
+                    var dt = d.toString();
+                    console.log(dt);
                     for (var i = 0; i < email.length; i++) {
                       if (email[i] == '@') {
                         isemail = 1;
@@ -182,7 +185,8 @@
                       firebase.database().ref('userAccount/feedback/' + email2).set({
                         username: username,
                         email: email,
-                        comment: comment
+                        comment: comment,
+                        dateTime: dt
                       }, function (error) {
                         if (error) {
                           // The write failed...
