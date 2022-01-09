@@ -155,7 +155,6 @@ function showComment() {
       document.getElementById('feedback-section').appendChild(dc);
       dc.style.display = "block";
       count++;
-      //alert(count);
     });
     if(count==0)
     {
@@ -167,7 +166,7 @@ function showComment() {
       
     }
   });
-  //alert(count + "dina");
+  
   let demo_disappear = document.getElementById("feedback-section");
   demo_disappear.children[1].style.display = "none";
 
@@ -185,7 +184,6 @@ function showComment() {
       document.getElementById('missing-section').appendChild(dc);
       dc.style.display = "block";
       count++;
-      //alert(count);
     });
     if(count==0)
     {
@@ -197,7 +195,7 @@ function showComment() {
       
     }
   });
-  //alert(count + "dina");
+  
   demo_disappear = document.getElementById("missing-section");
   demo_disappear.children[1].style.display = "none";
 

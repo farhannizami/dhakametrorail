@@ -87,7 +87,6 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  /*background: #106eea;*/
   background: rgb(0,104,55);
   width: 40px;
   height: 40px;
@@ -1666,7 +1665,6 @@ section {
 /*Notice button*/
 .notice-button {
   font-family: "Roboto", sans-serif;
-  /*text-transform: uppercase;*/
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -1783,14 +1781,12 @@ section {
 .dateshow
 {
   width: 15%;
-  /*background: green;*/
   font-size: 30px;
   font-weight: 900;
 }
 .noticeshow
 {
   width: 85%;
-  /*background: red;*/
   font-size: 25px;
 }
 
@@ -1805,7 +1801,6 @@ section {
   .dateshow
   {
     width: 20%;
-    /*background: yellow;*/
     font-size: 25px;
     font-weight: 700;
   }
@@ -1865,5 +1860,4 @@ section {
 #demo-comment
 {
   margin-top: 30px;
-  /* margin-bottom: 50px; */
 }
